@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffebf0 0%, #ffd6e0 50%, #ffc2d1 100%);
+    color: #8b4a65;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Loading Screen */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff85a2 0%, #ff6b9d 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+}
+
+.loading-heart {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.loading p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Envelope Cover */
+.envelope {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b9d 0%, #ff85a2 50%, #ff97b7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.envelope-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.heart-pulse {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.envelope-content h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.envelope-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.envelope-btn {
+    background: white;
+    color: #ff6b9d;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.envelope-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,240,245,0.9) 100%);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(255,105,157,0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.couple-names {
+    margin-bottom: 20px;
+}
+
+.bride, .groom {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin: 10px 0;
+    color: #ff6b9d;
+}
+
+.bride span, .groom span {
+    color: #8b4a65;
+    font-weight: 700;
+}
+
+.and {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #ff85a2;
+    font-family: 'Dancing Script', cursive;
+}
+
+.wedding-date {
+    font-size: 1.4rem;
+    color: #8b4a65;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.decoration-flowers {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+/* Countdown Section */
+.countdown-section {
+    text-align: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,240,245,0.9) 100%);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(255,105,157,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.countdown-section h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff6b9d;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff85a2 100%);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 20px;
+    min-width: 80px;
+    box-shadow: 0 8px 20px rgba(255,107,157,0.4);
+}
+
+.countdown-item span {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+}
+
+.countdown-item p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* Event Details */
+.event-details {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,240,245,0.9) 100%);
+    padding: 40px 30px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(255,105,157,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.event-details h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff6b9d;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.event-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(255,107,157,0.2);
+    border: 1px solid rgba(255,107,157,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.event-card h4 {
+    color: #ff6b9d;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.event-date, .event-time {
+    color: #8b4a65;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.event-location {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.location-btn {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff85a2 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,107,157,0.4);
+}
+
+.location-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,107,157,0.6);
+}
+
+/* RSVP Section */
+.rsvp-section {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,240,245,0.9) 100%);
+    padding: 40px 30px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(255,105,157,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.rsvp-section h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff6b9d;
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea {
+    padding: 15px 20px;
+    border: 2px solid #ffd6e0;
+    border-radius: 15px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.rsvp-form input:focus, .rsvp-form select:focus, .rsvp-form textarea:focus {
+    outline: none;
+    border-color: #ff6b9d;
+    box-shadow: 0 0 0 3px rgba(255,107,157,0.1);
+}
+
+.rsvp-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff85a2 100%);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,107,157,0.4);
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,107,157,0.6);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    background: white;
+    border: 2px solid #ff6b9d;
+    color: #ff6b9d;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(255,107,157,0.2);
+}
+
+.action-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,107,157,0.4);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,240,245,0.9) 100%);
+    border-radius: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 35px rgba(255,105,157,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.footer p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #8b4a65;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ff6b9d;
+    margin-top: 20px;
+}
+
+.footer-hearts {
+    font-size: 2rem;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bride, .groom {
+        font-size: 2.2rem;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 15px 10px;
+    }
+    
+    .countdown-item span {
+        font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-btn {
+        width: 200px;
+    }
+    
+    .envelope-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px;
+    }
+    
+    .hero {
+        padding: 30px 20px;
+    }
+    
+    .bride, .groom {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+        padding: 12px 8px;
+    }
+}
